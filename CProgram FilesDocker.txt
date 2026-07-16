@@ -1,0 +1,15 @@
+C:\Program Files\Docker
+C:\ProgramData\Docker
+C:\ProgramData\DockerDesktop
+C:\Users\<YourUsername>\AppData\Local\Docker
+C:\Users\<YourUsername>\AppData\Roaming\Docker
+C:\Users\<YourUsername>\AppData\Roaming\Docker Desktop
+C:\Users\<YourUsername>\.docker
+
+docker run -d -p 4442-4444:4442-4444 --net grid --name selenium-hub selenium/hub
+
+Chrome node : 
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e 
+SE_EVENT_BUS_SUBSCRIBE_PORT=4443 selenium/node-chrome
+
+Firefox node : 
